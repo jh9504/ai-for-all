@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Doctor Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="heading">AI Doctor Assistant</h1>
+    <form action="/process" method="POST">
+        <div class="input-box">
+            <div class="input-group">
+                <label for="example_format" class="input-label">Example Format (보고서 포맷 예시):</label>
+                <textarea id="example_format" name="example_format" class="input-text" placeholder="예시 포맷"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="symptom" class="input-label">Symptoms (증상 및 상황):</label>
+                <textarea id="symptom" name="symptom" class="input-text"
+                          placeholder="환자는 1달전 경 축구를 하다 발목을 접질렀으며..."></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn-submit">Process</button>
+    </form>
+</div>
+<script>
+    function checkEnter(event) {
+        if (event.keyCode == 13) { // If the pressed key is "Enter"
+            event.preventDefault(); // Prevent default behavior (form submission)
+        }
+    }
+</script>
+</body>
+</html>
+
